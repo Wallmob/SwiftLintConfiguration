@@ -8,23 +8,13 @@ disabled_rules:
   - function_parameter_count
   - unused_optional_binding
 
-force_cast: warning
-force_try: warning
-
-line_length:
-  warning: 130
-  error: 200
-  ignores_comments: true
-
-trailing_semicolon: error
-
 opt_in_rules:
   - array_init
   - attributes
   - closure_end_indentation
   - closure_spacing
   - collection_alignment
-  - colon # promote to error
+  - colon
   - convenience_type
   - discouraged_object_literal
   - empty_collection_literal
@@ -62,6 +52,16 @@ custom_rules:
     message: "IBActions cannot be asynchronous."
     severity: error
 
+line_length:
+  warning: 130
+  error: 200
+  ignores_comments: true
+
+force_cast: warning
+force_try: warning
+
+trailing_semicolon: error
+
 attributes:
   always_on_same_line:
     - "@IBSegueAction"
@@ -75,7 +75,3 @@ multiline_arguments:
 
 private_over_fileprivate:
   validate_extensions: true
-
-trailing_whitespace:
-  ignores_empty_lines: false
-  ignores_comments: true
