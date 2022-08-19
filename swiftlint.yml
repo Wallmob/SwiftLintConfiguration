@@ -22,6 +22,7 @@ opt_in_rules:
   - empty_string
   - enum_case_associated_values_count
   - fatal_error_message
+  - file_name
   - first_where
   - force_unwrapping
   - indentation_width
