@@ -3,6 +3,7 @@ disabled_rules:
   - trailing_whitespace
   - type_name
   - file_length
+  - function_body_length
   - type_body_length
   - inclusive_language
   - function_parameter_count
@@ -69,3 +70,9 @@ multiline_arguments:
 
 private_over_fileprivate:
   validate_extensions: true
+
+trailing_closure:
+  only_single_muted_parameter: true
+
+cyclomatic_complexity:
+  ignores_case_statements: true
