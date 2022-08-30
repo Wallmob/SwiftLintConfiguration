@@ -76,3 +76,10 @@ trailing_closure:
 
 cyclomatic_complexity:
   ignores_case_statements: true
+
+custom_rules:
+  combine_cancellable_set:
+    name: "AnyCancellables as Set"
+    regex: "\\[AnyCancellable\\]"
+    message: "Combine Cancellables must be put in a Set rather than Array."
+    severity: error
