@@ -56,7 +56,9 @@ line_length:
 force_cast: warning
 force_try: warning
 
+sorted_imports: error
 trailing_semicolon: error
+weak_delegate: error
 
 attributes:
   always_on_same_line:
