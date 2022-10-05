@@ -40,6 +40,7 @@ opt_in_rules:
   - prefer_self_type_over_type_of_self
   - redundant_nil_coalescing
   - redundant_type_annotation
+  - sorted_imports
   - toggle_bool
   - trailing_closure
   - unneeded_parentheses_in_closure_argument
