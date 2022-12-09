@@ -8,6 +8,7 @@ disabled_rules:
   - inclusive_language
   - function_parameter_count
   - unused_optional_binding
+  - nesting
 
 opt_in_rules:
   - array_init
