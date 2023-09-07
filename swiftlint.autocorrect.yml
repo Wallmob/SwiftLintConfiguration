@@ -51,6 +51,7 @@ opt_in_rules:
   - literal_expression_end_indentation
   - operator_usage_whitespace
   - prefer_self_type_over_type_of_self
+  - redundant_type_annotation
   - redundant_nil_coalescing
   - sorted_imports
   - toggle_bool
