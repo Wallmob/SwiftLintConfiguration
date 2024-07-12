@@ -85,7 +85,37 @@ cyclomatic_complexity:
 
 custom_rules:
   combine_cancellable_set:
+    # Matches:
+    # - [AnyCancellable]
     name: "AnyCancellables as Set"
     regex: "\\[AnyCancellable\\]"
     message: "Combine Cancellables must be put in a Set rather than Array."
+    severity: error
+  direct_date_usage:
+    # Matches:
+    # - Date()
+    # - Date.init()
+    # - Date.now
+    # - Date.timeIntervalSinceReferenceDate
+    # - Date.init(timeIntervalSinceNow: 123)
+    # - Date(timeIntervalSinceNow: 123)
+    # - NSDate.now
+    # - ,NSDate.now
+    # - ,Date()
+    #
+    # Does not match:
+    # - Date.timeIntervalBetween1970AndReferenceDate
+    name: "Direct Date usage"
+    regex: "(\\s|,|NS)Date\\.?(init)?(\\(\\)|now|timeIntervalSinceReferenceDate|\\(timeIntervalSinceNow)"
+    message: "Date must be initialized from Clock rather than directly. Use DI.resolve(.date) or a method from DI.resolve(.clock)"
+    severity: error
+  date_since_now:
+    # Matches:
+    # - Date.timeIntervalSinceNow
+    #
+    # Does not match:
+    # - DI.resolve(.clock).timeIntervalSinceNow(ofDate: date)
+    name: "Incorrect Date since Now usage"
+    regex: "\\.timeIntervalSinceNow[^(]"
+    message: "Date must be initialized from Clock rather than directly. Use DI.resolve(.clock).timeIntervalSinceNow(ofDate:)"
     severity: error
