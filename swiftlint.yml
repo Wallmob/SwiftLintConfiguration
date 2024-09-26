@@ -83,6 +83,9 @@ trailing_closure:
 cyclomatic_complexity:
   ignores_case_statements: true
 
+opening_brace:
+  ignore_multiline_statement_conditions: true
+
 custom_rules:
   combine_cancellable_set:
     name: "AnyCancellables as Set"
