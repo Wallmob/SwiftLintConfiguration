@@ -126,3 +126,24 @@ custom_rules:
     regex: "\\.timeIntervalSinceNow[^(]"
     message: "Date must be initialized from Clock rather than directly. Use DI.resolve(.clock).timeIntervalSinceNow(ofDate:)"
     severity: error
+  int_truncating:
+    # Matches:
+    # - Int(truncating: someValue)
+    # - Int(
+    #     truncating: anotherValue
+    #   )
+    name: "Int truncating usage"
+    regex: "Int\\s*\\(\\s*truncating:"
+    message: "Int truncating should be avoided. Use .asInt instead."
+    severity: warning
+  intValue:
+    # Matches:
+    # - .intValue
+    #
+    # Does not match:
+    # - object.intValue =
+    # - let intValue: Int
+    name: "intValue usage"
+    regex: "\\.intValue(?!\\s*=)"
+    message: "intValue should be avoided. Use .asInt instead."
+    severity: warning
